@@ -1,0 +1,36 @@
+.FormData{
+    display:flex;
+    flex-direction: column;
+   
+    height: 100vh;
+    margin: 50px auto;
+   
+}
+.FormInput{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin:20px;
+}
+.FormData form{
+   background-color: white;
+   height:500px;
+   padding:10px;
+   width:700px;
+}
+textarea{
+    resize: none;
+    width:100%;
+    height:200px;
+  
+}
+
+
+@media(max-width:768px){
+    .FormData form{
+        background-color: white;
+        height:500px;
+        padding:10px;
+        width:350px;
+     }
+}
