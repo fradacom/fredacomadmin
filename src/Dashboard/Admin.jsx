@@ -1,10 +1,12 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import { Input } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import { Button, message, Upload } from 'antd';
 import { Select } from 'antd';
 import './admin.css'
 import axios from 'axios'
+import { useQuill } from 'react-quilljs';
+import 'quill/dist/quill.snow.css';
 
 function Admin() {
   
@@ -13,7 +15,9 @@ function Admin() {
   const [desc,setDesc] = useState('');
   const [sel,setSel] = useState(null);
   const[fileStatus,setfileStatus] = useState('done')
+  const { quill, quillRef } = useQuill();
 
+  console.log(desc)
 //data to post to backend
   const data = {
       title:title,
@@ -74,18 +78,31 @@ function Admin() {
         setSel(value);
       };
     const { Option } = Select;
+   
+    useEffect(() => {
+      if (quill) {
+        quill.on('text-change', () => {
+         
+         
+          setDesc(quill.getText()); // Get innerHTML using quillRef
+        });
+      }
+     
+    }, [quill]);
   return (
     <>
     <div className='FormData'>
-        <div><h1>Post Content</h1></div>
+        <h1 style={{margin:'0'}}>Post Content</h1>
         <form onSubmit={post}>
 
        <div className="FormInput">
        
          <Input size="default" placeholder="Title" style={{width:'100%',padding:'7px'}} value={title} onChange={(e)=>settitle(e.target.value)}/></div>
-
-         <div className="FormInput"><textarea placeholder="Descriptions" style={{padding:'10px'}} value={desc} onChange={(e)=>setDesc(e.target.value)}/></div>
-        
+      
+         <div style={{ width: 800, height: 300 }}>
+            <div ref={quillRef} />
+        </div>
+        <br/><br/>
         <Select defaultValue="Category" style={{ width: '95%' }} onChange={handleChange} className="FormInput">
           <Option value="jack">Jack</Option>
           <Option value="lucy">Lucy</Option>
@@ -102,7 +119,7 @@ function Admin() {
    
 
         <div className="FormInput">
-          <button type="submit" style={{width:'250px',backgroundColor:'#2AC28E',color:'white',padding:'8px',border:'none'}}>Submit post</button>
+          <button type="submit" style={{width:'250px',backgroundColor:'#2AC28E',color:'white',padding:'8px',border:'none',cursor:'pointer'}}>Submit post</button>
         </div>
     </form>
     </div>

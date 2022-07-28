@@ -34,10 +34,10 @@ function Login() {
   >
     <Form.Item
     
-      name="username"
-      rules={[{ required: true, message: 'Please input your username!' }]}
+      name="email"
+      rules={[{ required: true, message: 'Please input your email!' }]}
     >
-      <Input  placeholder="UserName"/>
+      <Input  placeholder="Email"/>
     </Form.Item>
 
     <Form.Item

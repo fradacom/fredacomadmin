@@ -1,7 +1,7 @@
 .FormData{
     display:flex;
     flex-direction: column;
-   
+   width:100%;
     height: 100vh;
     margin: 50px auto;
    
@@ -10,13 +10,15 @@
     display:flex;
     flex-direction: column;
     align-items: center;
-    margin:20px;
+    margin-top:5px;
+    margin-bottom:20px;
 }
 .FormData form{
    background-color: white;
-   height:500px;
+   
    padding:10px;
-   width:700px;
+   width:60%;
+   margin:auto;
 }
 textarea{
     resize: none;
@@ -29,7 +31,7 @@ textarea{
 @media(max-width:768px){
     .FormData form{
         background-color: white;
-        height:500px;
+      
         padding:10px;
         width:350px;
      }
