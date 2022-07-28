@@ -12,7 +12,7 @@ function Admin() {
   
   const [file, setFile] = useState(null);
   const [title,settitle] = useState('');
-  const [desc,setDesc] = useState('');
+  const [desc,setDesc] = useState(null);
   const [sel,setSel] = useState(null);
   const[fileStatus,setfileStatus] = useState('done')
   const { quill, quillRef } = useQuill();
@@ -58,7 +58,7 @@ function Admin() {
            //It will always alert false because filestatus !== "done"(the action is empty).Check console for file status
                 alert("false")
                 settitle('')
-                setDesc('')
+                setDesc(null)
                 setSel(null)
           }
           else{
@@ -84,7 +84,7 @@ function Admin() {
         quill.on('text-change', () => {
          
          
-          setDesc(quill.getText()); // Get innerHTML using quillRef
+          setDesc(quillRef.current.firstChild.innerHTML); // Get innerHTML using quillRef
         });
       }
      
