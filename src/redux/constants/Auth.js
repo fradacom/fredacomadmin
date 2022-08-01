@@ -1,0 +1,20 @@
+export const SIGNIN = 'SIGNIN'; 
+export const AUTHENTICATED = 'AUTHENTICATED';
+export const SIGNOUT = 'SIGNOUT';
+export const SIGNOUT_SUCCESS = 'SIGNOUT_SUCCESS'
+export const SIGNUP = 'SIGNUP';
+export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
+export const SHOW_AUTH_MESSAGE = 'SHOW_AUTH_MESSAGE';
+export const HIDE_AUTH_MESSAGE = 'HIDE_AUTH_MESSAGE';
+export const SHOW_LOADING = 'SHOW_LOADING';
+export const HIDE_LOADING = 'HIDE_LOADING';
+export const AUTH_TOKEN = 'auth_token';
+export const REDIRECT_PATH = 'REDIRECT_PATH';
+export const REFRESH_TOKEN = 'REFRESH_TOKEN';
+export const SHOW_EMAIL_MESSAGE = 'SHOW_EMAIL_MESSAGE';
+export const HIDE_EMAIL_MESSAGE = 'HIDE_EMAIL_MESSAGE';
+export const SAVE_LOCATION = 'SAVE_LOCATION';
+export const SET_USER_DATA = 'SET_USER_DATA';
+export const SAVE_CATEGORIES = 'SAVE_CATEGORIES';
+export const SAVE_CATEGORY = 'SAVE_CATEGORY'
+
